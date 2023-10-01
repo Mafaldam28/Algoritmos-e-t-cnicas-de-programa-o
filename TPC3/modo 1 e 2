@@ -1,0 +1,41 @@
+#modo 1
+N = 50
+adiv = 50
+tentativa = 0
+resposta = ""
+while resposta == "maior" or resposta == "menor" or resposta == "":
+    resposta = str(input("O número em que pensou é " + str(adiv) + "?"))
+    N = N / 2
+    if resposta == "maior":
+        adiv = round(adiv + N, 0)
+    elif resposta == "menor":
+        adiv = round(adiv - N, 0)
+    tentativa = tentativa + 1
+if resposta == "acertou":
+    print("Fim do jogo")
+    print("O número de tentativas foi: " + str(tentativa))
+
+
+#modo 2
+import random
+def gera():
+    return random.randint(1,100)
+
+def game():
+    resposta = gera()
+    tentativa = 0
+    
+    palpite=0
+    while palpite is not resposta:
+        tentativa +=1
+        palpite = int(input("Qual é o seu palpite: "))
+        if palpite > resposta:
+            print("Errou! É um valor menor que ", palpite)
+        elif palpite < resposta:
+            print("Errou! É um valor maior que ", palpite)
+        else:
+            print("O número gerado foi ",resposta, \
+                  "Acertou na ",tentativa," tentativas!")
+    
+while True:
+    game()
