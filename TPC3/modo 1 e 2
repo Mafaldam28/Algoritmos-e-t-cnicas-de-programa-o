@@ -39,3 +39,4 @@ def game():
     
 while True:
     game()
+Serão 7 tentativas
