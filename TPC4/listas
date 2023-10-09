@@ -1,0 +1,112 @@
+import random
+lim = 8
+lista = []
+def criarlista(limite):
+    lista = []
+    while limite > 0:
+        limite = limite - 1
+        lista.append(random.randint(1,101))
+    return lista
+def lerlista(limite):
+    lista = []
+    while limite > 0:
+        limite = limite - 1
+        lista.append(int(input("Introduza um número para a lista")))
+    return lista
+def somalista(lista):
+    s = 0
+    for elementos in lista:
+        s = s + elementos
+    return s
+def media(lista, limite):
+    s = 0
+    media = 0
+    for elementos in lista:
+        s = s + elementos
+    media = s / limite
+    return media
+def máximo(lista):
+    max = 0
+    for elemento in lista:
+       if elemento > max:
+            max = elemento 
+    return max 
+def minimo(lista):
+    min = 10000 
+    for elementos in lista:
+        if elementos < min:
+            min = elementos 
+    return min 
+def crescente(lista):
+    elem = 0 
+    a = 1
+    for elementos in lista:
+        if elem > elementos:
+            a = 2
+        elem = elementos
+    if a == 2:
+        print("Não") 
+    else: 
+        print ("Sim")
+    return 
+def decrescente(lista):
+    elem = 10000
+    a = 1 
+    for elementos in lista:
+        if elem < elementos:
+            a = 3
+        elem = elementos
+    if a == 3:
+        print("Não")
+    else: 
+        print("Sim") 
+    return
+def procurar(lista):
+    a = int(input("Introduza um valor para verificar na lista"))
+    b = 1
+    s = 0
+    m = 0
+    for elementos in lista:
+        if a == elementos:
+            print(b)
+            s = 1
+        b = b + 1 
+    if s == 0:
+        m = -1
+    return m
+a = - 1 
+while a == -1 or a == 1 or a == 2 or a == 3 or a == 4 or a == 5 or a == 6 or a== 7 or a == 8 or a == 9:
+    a = int(input("""(1) Criar Lista 
+    (2) Ler Lista
+    (3) Soma
+    (4) Média
+    (5) Maior
+    (6) Menor
+    (7) estaOrdenada por ordem crescente
+    (8) estaOrdenada por ordem decrescente
+    (9) Procura um elemento
+    (0) Sair"""))
+    if a == 1:
+        lista = criarlista(lim)
+        print(lista)
+    if a == 2:
+        lista = lerlista(lim) 
+        print(lista)
+    if a == 3:
+        soma = somalista(lista)
+        print(soma)
+    if a == 4:
+        mediam = media(lista, lim)
+        print(mediam)
+    if a == 5:
+        max = máximo(lista)
+        print(max)
+    if a == 6:
+        min = minimo(lista)
+        print(min)
+    if a == 7:
+        crescente(lista)
+    if a == 8:
+        decrescente(lista)    
+    if a == 9:
+        procurar(lista) 
