@@ -1,0 +1,56 @@
+#Cinema = [Sala]
+#Sala = [nlugares, Vendidos, filme]
+#nlugares = Int
+#filme = String 
+#Vendidos = [Int]
+
+def listar(cinema):
+    for salas in cinema: 
+        print(str(salas[2]))
+    return ""
+def disponivel(cinema, filme, lugar):
+    a = True
+    for x in cinema:
+        if x [2] == filme: 
+            for i in x[1]:
+                if i == lugar:
+                    a = False
+    return a 
+def vendebilhete(cinema, filme, lugar): 
+    for x in cinema: 
+        if x[2] == filme:
+            x[1].append(lugar)
+    return cinema 
+def listardisponibilidades(cinema):
+    for x in cinema:
+        print(x[2])
+        lugares = x[0] - len(x[1])
+        print (lugares)
+    return 
+def inserirSala(cinema, sala):
+    if sala not in cinema:
+        cinema.append(sala)
+    return cinema 
+sala1 = (150, [], "Twilight")
+sala2 = (200, [], "Hannibal")
+cinema1 = [sala2]
+filme = "Hannibal"
+lugar = 7
+opcao = 1
+while opcao != 0:
+    opcao = int(input("""(1) filmes disponiveis
+    (2) lugares disponiveis
+    (3) lugares ocupados
+    (4) filme exibido na sala
+    (5) sala do filme 
+    (0) sair"""))
+    if opcao == 1:
+        listar(cinema1) 
+    if opcao == 2:
+        disponivel(cinema1, filme, lugar)
+    if opcao == 3:
+        vendebilhete(cinema1, filme, lugar)
+    if opcao == 4:
+        listardisponibilidades(cinema1)
+    if opcao == 5:
+        inserirSala(cinema1, sala1)
