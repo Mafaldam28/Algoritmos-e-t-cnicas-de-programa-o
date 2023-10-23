@@ -1,0 +1,85 @@
+f = "coisas.csv"
+#1
+def leficheiro(f):
+    f = open(f)
+    for linhas in f:
+        i = 0
+        campos = linhas.split(",")
+        while i < len(campos):
+            print(campos[i], end = " ")
+            i = i + 1
+    f.close()
+    return
+#2
+def calc(f):
+    d1 = 0
+    d2 = 0
+    fem = 0
+    masc = 0
+    f = open(f)
+    for linhas in f:
+        campos = linhas.split(",")
+        if campos[-1] == "1":
+            if campos[0] == "Female":
+                d1 = d1 + 1
+            else:
+                d2 = d2 + 1
+        f = f + 1
+        m = m + 1
+    pfem = float((d1/fem) * 100)
+    pmasc = float((d2/masc) * 100)
+    print("Mulheres doentes: " + str(pfem) + "%")
+    print("Homens doentes: " + str(pmasc) + "%")
+    f.close()
+    return
+#3
+def calc(f):
+    a = 0
+    b = 0
+    c = 0
+    d = 0
+    e = 0
+    f = 0
+    g = 0
+    h = 0
+    i = 0
+    t = 0
+    f = open(f)
+    for linhas in f:
+        campos = linhas.split(",")
+        t = t + 1
+        if campos[-1] == "1":
+            if campos[1] < 11:
+                a = a + 1
+            if campos[1] < 25:
+                b = b + 1
+            if campos[1] < 30:
+                c = c + 1
+            if campos[1] < 35:
+                d = d + 1
+            if campos[1] < 40:
+                e = e + 1
+            if campos[1] < 45:
+                f = f + 1
+            if campos[1] < 59:
+                g = g + 1
+            if campos[1] < 80:
+                h = h + 1
+            else:
+                i = i + 1
+    print("[0,10]: " + str(a/t))
+    print("[11,24]: " + str(b/t))
+    print("[25,29]: " + str(c/t))
+    print("[30,34]: " + str(d/t))
+    print("[35,39]: " + str(e/t))
+    print("[40,44]: " + str(f/t))    
+    print("[45,49]: " + str(g/t))
+    print("[50,54]: " + str(i/t))
+    return
+def tabela(t):
+    for elem in t:
+        print(elem)
+    return
+
+
+
