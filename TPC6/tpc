@@ -61,7 +61,7 @@ def calc(f):
                 e = e + 1
             if campos[1] < 45:
                 f = f + 1
-            if campos[1] < 59:
+            if campos[1] < 60:
                 g = g + 1
             if campos[1] < 80:
                 h = h + 1
@@ -73,8 +73,9 @@ def calc(f):
     print("[30,34]: " + str(d/t))
     print("[35,39]: " + str(e/t))
     print("[40,44]: " + str(f/t))    
-    print("[45,49]: " + str(g/t))
-    print("[50,54]: " + str(i/t))
+    print("[45,59]: " + str(g/t))
+    print("[60,79]: " + str(h/t))
+    print("[80+]: " + str(i/t))
     return
 def tabela(t):
     for elem in t:
