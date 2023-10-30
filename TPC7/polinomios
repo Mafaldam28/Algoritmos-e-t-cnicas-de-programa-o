@@ -1,0 +1,51 @@
+lp = [[(1,7),(3.7,4),(5,3),(-88,0)],[(2,2),(17,0)],[(7,4),(6,3),(-1,2),(43,0)],[(1,4)],[(1,2)],[(1,3)]]
+def derivada(pol):
+    res = []
+    for mon in pol:
+        coef, exp = mon
+        coef = coef * exp
+        exp = exp - 1
+        res.append((coef,exp))
+    return res
+print(derivada([(1,7),(3.7,4),(5,3),(-88,0)]))
+def soma(p1,p2):
+    resp = []
+    for mon1 in p1:
+        coef = mon1[0]
+        for mon2 in p2:
+            if mon2[1] == mon1[1]:
+                coef = coef + mon2[0]
+        resp.append((coef,mon1[1]))
+    return resp
+print(soma([(1,7),(3.7,4),(5,3),(-88,0)],[(2,2),(17,0)]))
+
+def criap():
+    pol = []
+    lim = int(input("Qual é o número de termos do polinómio?"))
+    while lim > 0:
+        coef = float(input("Qual é o coeficiente"))
+        exp = int(input("Qual é o grau?"))
+        pol.append((coef,exp))
+        lim = lim - 1
+    return pol
+def lerp(ficheiro):
+    f = open(ficheiro)
+    for linha in f:
+        pol = linha.split("/")
+        pol.remove("\n")
+        for mon in pol:
+            num = mon.split(",")
+            print(str(num[0]) + "x^" + str(num[1]))
+    return
+def listar(lp):
+    i = 1
+    for pol in lp:
+        print(i, pol)
+        i = i + 1
+    return
+def valor(p,x):
+    res = 0
+    for mon in p:
+        coef, exp = mon
+        res = coef * x ** exp
+    return res
