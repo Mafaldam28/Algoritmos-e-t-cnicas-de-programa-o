@@ -1,0 +1,43 @@
+lista1 = [1, 2, 3, 4, 5]
+lista2 = [4, 5, 6, 7, 8]  
+def comuns(lista1, lista2):
+    return [num for num in lista1 if num not in lista2] + [num for num in lista2 if num not in lista1]    
+# Resultado esperado: [1,2,3,5,7,8]
+texto = """Vivia há já não poucos anos algures num concelho do Ribatejo 
+    um pequeno lavrador e negociante de gado chamado Manuel Peres Vigário"""
+def palavras(texto):
+    return[palavra for palavra in texto.split(" ")if len(palavra)>3]
+# Resultado esperado: ['Vivia', 'poucos', 'anos', 'algures', 'concelho', ...]
+lista = ['anaconda', 'burro', 'cavalo', 'macaco']
+def pares(lista):
+    return[(indice + 1, valor)for indice, valor in enumerate(lista)]
+# Resultado esperado: [(1,'anaconda'), (2,'burro'), (3,'cavalo'), (4,'macaco')]
+
+def quantosPost(redeSocial):
+    return len(redeSocial)
+def postsAutor(redeSocial, autor):
+    res= []
+    for x in redeSocial:
+        if autor==x['autor']:
+            res.append(x['conteudo'])
+    return res
+def autores(redeSocial):
+    res = []
+    for x in redeSocial:
+        if x['autor'] not in res:
+            res.append(x['autor'])
+        res.sort()
+    return res
+def remPost(redeSocial, id):
+    for x in redeSocial:
+        if id == x['id']:
+            redeSocial.pop(x)
+    return redeSocial
+def postsPorAutor(redeSocial):
+    p = {}
+    for x in redeSocial:
+        if x['autor'] in p:
+            p[x['autor']] = p[x['autor']] + 1
+        else:
+            p[x['autor']] = 1
+    return p
